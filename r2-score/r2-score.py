@@ -7,8 +7,8 @@ def r2_score(y_true, y_pred) -> float:
       - return 1.0 if predictions match exactly,
       - else 0.0.
     """
-    y_true = np.array(y_true).astype(float)
-    y_pred = np.array(y_pred).astype(float)
+    y_true = np.atleast_1d(y_true).astype(float)
+    y_pred = np.atleast_1d(y_pred).astype(float)
 
     edge_1 = np.all(y_true == y_true[0])
     edge_2 = np.all(y_pred == y_true[0])
