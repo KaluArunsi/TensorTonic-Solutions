@@ -4,7 +4,7 @@ def mean_squared_error(y_pred, y_true):
     """
     Returns: float MSE
     """
-    y_true, y_pred = np.array(y_true), np.array(y_pred)
+    y_true, y_pred = np.atleast_1d(y_true), np.atleast_1d(y_pred)
     y_true, y_pred = np.ndarray.flatten(y_true), np.ndarray.flatten(y_pred)
 
     size_check = (y_pred.size == y_true.size)
