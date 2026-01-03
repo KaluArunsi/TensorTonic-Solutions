@@ -5,7 +5,7 @@ def mean_median_mode(x):
     """
     Compute mean, median, and mode.
     """
-    x = np.array(x)
+    x = np.atleast_1d(x).astype(float)
     x_values, x_count = np.unique(x, return_counts=True)
     value_index = np.argmax(x_count)
 
