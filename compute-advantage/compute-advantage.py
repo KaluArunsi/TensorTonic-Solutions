@@ -7,7 +7,6 @@ def compute_advantage(states, rewards, V, gamma):
     V, rewards = np.asanyarray(V), np.asanyarray(rewards)
 
     g_t = np.zeros_like(rewards, dtype=float)
-    v_st = []
     g_value = 0
 
     for r in reversed(range(len(rewards))):
