@@ -8,8 +8,8 @@ def adagrad_step(w, g, G, lr=0.01, eps=1e-8):
 
     g_t = G + np.square(g)
 
-    denom = np.sqrt(g_t) + eps
+    lr_t = lr / (np.sqrt(g_t) + eps)
 
-    w_t = w - (lr / denom) * g
+    w_t = w - lr_t * g
 
     return w_t, g_t
